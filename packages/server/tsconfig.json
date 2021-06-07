@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 14",
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "target": "es2020",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["/*"],
+      "@routes/*": ["routes/*"]
+    },
+    "rootDir": "src",
+    "sourceMap": true,
+    "outDir": "build",
+    "incremental": true,
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["node_modules", "dist"]
+}
