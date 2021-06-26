@@ -1,0 +1,46 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Handles requests (authorization and CRUD for models) and process data (from antenna's recording) received from frontends.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build --stream",
+    "clean": "lerna run clean --parallel",
+    "lint": "eslint ./packages --ext .ts",
+    "test": "yarn build && jest",
+    "test:watch": "yarn build && jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srs-saros/backend.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srs-saros/backend/issues"
+  },
+  "homepage": "https://github.com/srs-saros/backend#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "jest": "^27.0.5",
+    "lerna": "^4.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.4"
+  }
+}
