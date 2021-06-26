@@ -1,0 +1,37 @@
+{
+  "name": "@srs-backend/server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Basic API server",
+  "author": "sebastian-mancipe <smancipeparedes@gmail.com>",
+  "homepage": "https://github.com/srs-saros/backend/tree/main/packages/server#readme",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "directories": {
+    "src": "src",
+    "test": "tests"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srs-saros/backend.git"
+  },
+  "scripts": {
+    "test": "jest --watch --no-coverage",
+    "build": "tsc -b",
+    "clean": "rm -rf ./dist && rm tsconfig.tsbuildinfo",
+    "watch": "tsc -b -w --preserveWatchOutput",
+    "dev": "yarn run build && nodemon dist/index.js",
+    "lint": "prettier 'src/**/*.ts' --write && eslint 'src/*'"
+  },
+  "bugs": {
+    "url": "https://github.com/srs-saros/backend/issues"
+  },
+  "dependencies": {
+    "fastify": "^3.18.0",
+    "fastify-plugin": "^3.0.0"
+  },
+  "devDependencies": {}
+}
