@@ -24,14 +24,15 @@
     "clean": "rm -rf ./dist && rm tsconfig.tsbuildinfo",
     "watch": "tsc -b -w --preserveWatchOutput",
     "dev": "yarn run build && nodemon dist/index.js",
-    "lint": "prettier 'src/**/*.ts' --write && eslint 'src/*'"
+    "lint": "prettier 'src/**/*.ts' --write && eslint 'src/*'",
+    "db": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' NODE_ENV=production npx knex"
   },
   "bugs": {
     "url": "https://github.com/srs-saros/backend/issues"
   },
   "dependencies": {
     "fastify": "^3.18.0",
-    "fastify-plugin": "^3.0.0"
-  },
-  "devDependencies": {}
+    "fastify-plugin": "^3.0.0",
+    "knex": "^0.95.6"
+  }
 }

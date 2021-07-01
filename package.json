@@ -15,7 +15,8 @@
     "clean": "lerna run clean --parallel",
     "lint": "eslint ./packages --ext .ts",
     "test": "yarn build && jest",
-    "test:watch": "yarn build && jest --watch"
+    "test:watch": "yarn build && jest --watch",
+    "db:start": "docker-compose -f .docker/docker-compose.yml up -d"
   },
   "repository": {
     "type": "git",
@@ -35,12 +36,15 @@
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "jest": "^27.0.5",
     "lerna": "^4.0.0",
     "nodemon": "^2.0.7",
+    "pg": "^8.6.0",
     "prettier": "^2.3.2",
+    "sqlite3": "^5.0.2",
     "ts-jest": "^27.0.3",
+    "ts-node": "^10.0.0",
     "typescript": "^4.3.4"
   }
 }

@@ -12,6 +12,9 @@ yarn
 
 2. Make sure to have set a `.env` file with your configuration variables. You can find an example in the `.env.dist` file inside the project.
 3. Execute the `dev` command set in the `package.json` file to start the project in local with your environment variables.
+4. Migrations have to be run using the `yarn run db migrate:up` command manually (work in progress).
+
+<sub>The `yarn run db` utility can be mixed with several flags as explained [here](https://knexjs.org/#Migrations)</sub>
 
 ```bash
 yarm run dev
