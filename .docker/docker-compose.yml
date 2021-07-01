@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  backend-postgresql:
+    #   Use the Docker Image postgres.
+    image: postgres:13.1
+    #       Give the container the name my_postgres. You can changes to something else.
+    container_name: backend-postgresql
+    #   Setup the username, password, and database name. You can changes these values.
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=backend
+    restart: always
+    #   Maps port 54320 (localhost) to port 5432 on the container
+    ports:
+      - 5432:5432
+    #   Set a volume to not lose data after shutting down the container.
+    volumes:
+      - backend-data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+networks:
+  backend:
+
+volumes:
+  backend-data:
