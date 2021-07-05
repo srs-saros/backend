@@ -1,5 +1,6 @@
 //These values are set when executing the knex command using the .env in the current package folder
-const { DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD } = process.env;
+const { DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST } =
+  process.env;
 
 const configuration = {
   development: {
@@ -12,6 +13,7 @@ const configuration = {
   production: {
     client: 'postgresql',
     connection: {
+      host: DATABASE_HOST,
       database: DATABASE_NAME,
       user: DATABASE_USER,
       password: DATABASE_PASSWORD

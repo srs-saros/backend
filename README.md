@@ -39,9 +39,13 @@ Executes `eslint` reviewing the code for **all the files inside packages inside 
 
 Executes `yarn build` and `jest` executing all the tests **inside the `packages` folder**. There's an interactive variant of `jest` with `yarn test:watch`.
 
-### `yarn run db`
+### `yarn run db:start`
 
-Executes `docker-compose` to start the container that works as the PostgreSQL database.
+Executes `docker-compose` to start the container that works as the PostgreSQL database. You can easily connect to the database with any Database Manager GUI with the crendetials set in the `.env` along this file.
+
+### `yarn run db:stop`
+
+Executes `docker` to stop the container with the name `backend-postgresql`.
 
 ## Code form
 
@@ -63,7 +67,7 @@ We have set a `pre-push` git hook to be executed _before each push_ that runs th
 
 ## Docker
 
-To effectively develop you'll need to start and use the PostgreSQL database. For that we use Docker as container manager along with Docker Compose to parametrize it (this is a work in progress). You'll need to have:
+To effectively develop you'll need to start and use the PostgreSQL database. For that we use Docker as container manager along with Docker Compose to parametrize it. You'll need to have:
 
 - Docker version 20.10.7 at least
 - Docker Compose 1.29.2 at least

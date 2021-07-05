@@ -16,7 +16,8 @@
     "lint": "eslint ./packages --ext .ts",
     "test": "yarn build && jest",
     "test:watch": "yarn build && jest --watch",
-    "db:start": "docker-compose -f .docker/docker-compose.yml up -d"
+    "db:start": "docker-compose -f .docker/docker-compose.yml up -d",
+    "db:stop": "docker stop backend-postgresql"
   },
   "repository": {
     "type": "git",

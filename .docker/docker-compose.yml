@@ -8,13 +8,13 @@ services:
     container_name: backend-postgresql
     #   Setup the username, password, and database name. You can changes these values.
     environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=backend
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
     restart: always
     #   Maps port 54320 (localhost) to port 5432 on the container
     ports:
-      - 5432:5432
+      - ${LOCAL_PORT}:${DATABASE_PORT}
     #   Set a volume to not lose data after shutting down the container.
     volumes:
       - backend-data:/var/lib/postgresql/data
