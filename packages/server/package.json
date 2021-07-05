@@ -35,5 +35,8 @@
     "fastify-plugin": "^3.0.0",
     "knex": "^0.95.6",
     "nodemon": "^2.0.9"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^4.0.0"
   }
 }
