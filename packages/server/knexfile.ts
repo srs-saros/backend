@@ -1,4 +1,7 @@
-module.exports = {
+//These values are set when executing the knex command using the .env in the current package folder
+const { DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD } = process.env;
+
+const configuration = {
   development: {
     client: 'sqlite3',
     connection: {
@@ -9,12 +12,14 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'backend',
-      user: 'root',
-      password: 'root'
+      database: DATABASE_NAME,
+      user: DATABASE_USER,
+      password: DATABASE_PASSWORD
     },
     migrations: {
       tableName: 'migrations'
     }
   }
 };
+
+export default configuration;

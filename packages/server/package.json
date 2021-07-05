@@ -25,7 +25,7 @@
     "watch": "tsc -b -w --preserveWatchOutput",
     "dev": "yarn run build && nodemon dist/index.js",
     "lint": "prettier 'src/**/*.ts' --write && eslint 'src/*'",
-    "db": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' NODE_ENV=production npx knex"
+    "db": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' dotenv npx knex"
   },
   "bugs": {
     "url": "https://github.com/srs-saros/backend/issues"
@@ -33,6 +33,7 @@
   "dependencies": {
     "fastify": "^3.18.0",
     "fastify-plugin": "^3.0.0",
-    "knex": "^0.95.6"
+    "knex": "^0.95.6",
+    "nodemon": "^2.0.9"
   }
 }
