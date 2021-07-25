@@ -14,12 +14,20 @@ services:
     restart: always
     #   Maps port 54320 (localhost) to port 5432 on the container
     ports:
-      - ${LOCAL_PORT}:${DATABASE_PORT}
+      - "5432:5432"
     #   Set a volume to not lose data after shutting down the container.
     volumes:
       - backend-data:/var/lib/postgresql/data
     networks:
       - backend
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    hostname: mosquitto
+    container_name: mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - "../mosquitto/:/mosquitto/config/"
 
 networks:
   backend:
